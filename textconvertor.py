@@ -3,6 +3,9 @@ from tkinter import *
 import speech_recognition as sr
 from translate import Translator
 
+global counter
+counter = 2
+
 main = Tk()
 main.title("text convertor")
 main.minsize(400,400)
@@ -27,11 +30,16 @@ def get_voice():
             text = text.lower()
             translator = Translator(to_lang="fa")
             text = translator.translate(text)
-            print(text)
+            show_text(text)
     except:
         pass
 
-        
+def show_text(text):   
+    global counter
+    lbl_name = f"lbl_{counter}"
+    lbl_name = Label(text=text)
+    lbl_name.config(font=("Mitra",16))
+    lbl_name.grid(row=counter)     
 
 widgets()
 
