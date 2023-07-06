@@ -11,6 +11,7 @@ main.title("text convertor")
 main.minsize(400,400)
 main.maxsize(400,400)
 
+
 def widgets():
     lbl_start = Label( main, text="speak")
     lbl_start.config(font=("esthetique",22,"bold"), bg="blue", width=24)
@@ -34,12 +35,15 @@ def get_voice():
     except:
         pass
 
+
 def show_text(text):   
     global counter
     lbl_name = f"lbl_{counter}"
     lbl_name = Label(text=text)
-    lbl_name.config(font=("Mitra",16))
-    lbl_name.grid(row=counter)     
+    lbl_name.config(font=("B Kamran Bold",16))
+    lbl_name.grid(row=counter)
+    counter += 1      
+
 
 widgets()
 
