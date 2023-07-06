@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import *
 import speech_recognition as sr
+from translate import Translator
 
 main = Tk()
 main.title("text convertor")
@@ -24,6 +25,8 @@ def get_voice():
             audio = r.listen(src)
             text = r.recognize_google(audio)
             text = text.lower()
+            translator = Translator(to_lang="fa")
+            text = translator.translate(text)
             print(text)
     except:
         pass
